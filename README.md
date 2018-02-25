@@ -1,6 +1,8 @@
 # README
 
-bundle install
+Bundle install
+
+Rake db:create db:migrate
 
 Run rails server
 
