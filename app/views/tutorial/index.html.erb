@@ -1,2 +1,12 @@
-<h1>Tutorial#index</h1>
-<p>Find me in app/views/tutorial/index.html.erb</p>
+<a href="/queue" class="button">Queue</a>
+<% if flash[:message] %>
+  <span class="message"><%= flash[:message] %></span>
+<% end %>
+<ul class="listing">
+    <% @tutorials.each do |t| %>
+    <li>
+      <div><a href="/tutorial/<%= t.id %>"><%= t.title %></a></div>
+      <div><%= t.author.name %>, last retrieved at <%= datetime t.updated_at %></div>
+    </li>
+    <% end %>
+</ul>
